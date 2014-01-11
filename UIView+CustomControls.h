@@ -19,26 +19,31 @@ typedef enum {
 
 @interface UIView (CustomControls)
 
-- (void)showActivityViewWithText:(NSString *)text andBackgroundColor:(UIColor*)bkgColor;
-- (void)showActivityViewWithBackgroundColor:(UIColor*)bkgColor;
-- (void)showInTaxiActivityView;
-- (void)showInTaxiActivityViewWithYOffset:(float)offset;
-- (void)showInTaxiActivityViewWithYOffset:(float)offset andBackgroundColor:(UIColor*)color;
-- (void)hideActivityView;
+//Shortcut for frame.origin.x
+@property (nonatomic, readonly) CGFloat originX;
 
-- (void)showInTaxiActivityIndicatorWithText:(NSString*)text andOriginY:(CGFloat)originY;
-- (void)hideActivityIndicator;
+//Shortcut for frame.origin.y
+@property (nonatomic, readonly) CGFloat originY;
 
-- (BOOL)findAndResignFirstResponder;
+/**
+ * Shortcut for frame.origin.x + frame.size.width
+ *
+ * Sets frame.origin.x = right - frame.size.width
+ */
+@property (nonatomic) CGFloat right;
 
-- (void)scrollsToX:(int)xPos animated:(BOOL)animated;
-- (void)scrollsToY:(int)yPos animated:(BOOL)animated;
+/**
+ * Shortcut for frame.origin.y + frame.size.height
+ *
+ * Sets frame.origin.y = bottom - frame.size.height
+ */
+@property (nonatomic) CGFloat bottom;
 
-- (void)setRoundedCorners:(UIViewRoundedCornerMask)corners radius:(CGFloat)radius;
+//Shortcut for frame.size.width
+@property (nonatomic, readonly) CGFloat width;
 
-- (UIViewAutoresizing)fullAutoresizing;
-- (void)setFullAutoresizing;
-- (void)setMarginAutoresizing;
+//Shortcut for frame.size.height
+@property (nonatomic, readonly) CGFloat height;
 
 - (void)setOriginX:(CGFloat)x;
 - (void)setOriginY:(CGFloat)y;
@@ -51,6 +56,26 @@ typedef enum {
 - (void)increaseY:(CGFloat)y;
 - (void)increaseWidth:(CGFloat)width;
 - (void)increaseHeight:(CGFloat)height;
+
+- (void)scrollsToX:(int)xPos animated:(BOOL)animated;
+- (void)scrollsToY:(int)yPos animated:(BOOL)animated;
+
+- (UIViewAutoresizing)fullAutoresizing;
+- (void)setFullAutoresizing;
+- (void)setMarginAutoresizing;
+
+- (void)removeAllSubviews;
+
+- (void)setRoundedCorners:(UIViewRoundedCornerMask)corners radius:(CGFloat)radius;
+
+- (BOOL)findAndResignFirstResponder;
+
+- (void)showActivityViewWithText:(NSString *)text andBackgroundColor:(UIColor*)bkgColor;
+- (void)showActivityViewWithBackgroundColor:(UIColor*)bkgColor;
+- (void)hideActivityView;
+
+- (void)showInTaxiActivityIndicatorWithText:(NSString*)text andOriginY:(CGFloat)originY;
+- (void)hideActivityIndicator;
 
 CGRect CGRectSwapOriginInRect(CGRect rect);
 CGRect CGRectSwapSizeInRect(CGRect rect);
