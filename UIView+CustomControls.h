@@ -19,10 +19,14 @@ typedef enum {
 
 @interface UIView (CustomControls)
 
-//Shortcut for frame.origin.x
+/**
+ * Shortcut for frame.origin.x
+ */
 @property (nonatomic, readonly) CGFloat originX;
 
-//Shortcut for frame.origin.y
+/**
+ * Shortcut for frame.origin.y
+ */
 @property (nonatomic, readonly) CGFloat originY;
 
 /**
@@ -39,10 +43,14 @@ typedef enum {
  */
 @property (nonatomic) CGFloat bottom;
 
-//Shortcut for frame.size.width
+/**
+ * Shortcut for frame.size.width
+ */
 @property (nonatomic, readonly) CGFloat width;
 
-//Shortcut for frame.size.height
+/**
+ * Shortcut for frame.size.height
+ */
 @property (nonatomic, readonly) CGFloat height;
 
 - (void)setOriginX:(CGFloat)x;
