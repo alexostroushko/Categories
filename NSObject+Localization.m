@@ -12,45 +12,45 @@
 
 - (void)translateButton:(UIButton *)button
 {
-	[button setTitle:InruLoc([button titleForState:UIControlStateNormal])
+	[button setTitle:NSLocalizedString([button titleForState:UIControlStateNormal], nil)
 			forState:UIControlStateNormal];
-	[button setTitle:InruLoc([button titleForState:UIControlStateHighlighted]) 
+	[button setTitle:NSLocalizedString([button titleForState:UIControlStateHighlighted], nil) 
 			forState:UIControlStateHighlighted];
-	[button setTitle:InruLoc([button titleForState:UIControlStateSelected])
+	[button setTitle:NSLocalizedString([button titleForState:UIControlStateSelected], nil)
 			forState:UIControlStateSelected];
-	[button setTitle:InruLoc([button titleForState:UIControlStateDisabled]) 
+	[button setTitle:NSLocalizedString([button titleForState:UIControlStateDisabled], nil) 
 			forState:UIControlStateDisabled];
 }
 
 - (void)translateLabel:(UILabel *) label
 {
-	[label setText:InruLoc([label text])];
+	[label setText:NSLocalizedString([label text], nil)];
 }
 
 - (void)translateTextField:(UITextField *)field
 {
-	[field setPlaceholder:InruLoc([field placeholder])];
-	[field setText:InruLoc([field text])];
+	[field setPlaceholder:NSLocalizedString([field placeholder], nil)];
+	[field setText:NSLocalizedString([field text], nil)];
 }
 
 - (void)translateTextView:(UITextView *)textView
 {
-	[textView setText:InruLoc([textView text])];
+	[textView setText:NSLocalizedString([textView text], nil)];
 }
 
 - (void)translateBarItem:(UIBarItem *)barItem
 {
-	[barItem setTitle:InruLoc([barItem title])];
+	[barItem setTitle:NSLocalizedString([barItem title], nil)];
 }
 
 - (void)translateBarButtonItem:(UIBarButtonItem *)barItem
 {
-	[barItem setTitle:InruLoc([barItem title])];
+	[barItem setTitle:NSLocalizedString([barItem title], nil)];
 }
 
 - (void)translateNavigationItem:(UINavigationItem *)navigationItem
 {
-	[navigationItem setTitle:InruLoc([navigationItem title])];
+	[navigationItem setTitle:NSLocalizedString([navigationItem title], nil)];
 }
 
 - (void)translateSegmentedControl:(UISegmentedControl *)segmentedControl
@@ -59,7 +59,7 @@
     {
         if ([segmentedControl titleForSegmentAtIndex:i])
         {            
-            [segmentedControl setTitle:InruLoc([segmentedControl titleForSegmentAtIndex:i]) 
+            [segmentedControl setTitle:NSLocalizedString([segmentedControl titleForSegmentAtIndex:i], nil) 
                      forSegmentAtIndex:i];
         }
     }
