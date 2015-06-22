@@ -16,9 +16,19 @@
     return ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2);
 }
 
++ (BOOL)isPhone35inches
+{
+    return ([UIScreen mainScreen].bounds.size.height == 480);
+}
+
 +(BOOL)isPhone4inches
 {
     return ([UIScreen mainScreen].bounds.size.height == 568);
+}
+
++(BOOL)isPhoneBigger4inches
+{
+    return ([UIScreen mainScreen].bounds.size.height > 568);
 }
 
 @end
